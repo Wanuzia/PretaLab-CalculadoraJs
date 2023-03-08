@@ -6,12 +6,12 @@ function somar() {
   /* use as constantes numero 1 e numero 2 e realize a soma entre elas.
   Em seguida, ao invés de mostrar o numero 10, mostre o resultado da operação */
   
+  const resultado = numero1 + numero2
   
   
   
   
-  
-  document.getElementById("resultadoSoma").innerHTML = 10;
+  document.getElementById("resultadoSoma").innerHTML = resultado
 }
 
 function subtrair() {
