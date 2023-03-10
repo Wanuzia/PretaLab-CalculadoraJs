@@ -21,13 +21,39 @@ function calcularMedia() {
   let mensagem = "";
   // evite mexer no código acima!
   
+  const notas = [nota1, note2, note3, note4]
+  let soma = 0;
 
+  for (i = 0; i < notas.length; i++){
+    soma += notas[i]
+  }
+
+  const notas_media = soma / notas.length
+   
+  if (notas_media === 0) {
+    mensagem = "Infelizmente você zerou a prova :( "
+  }
+  if (notas_media >= 0.1 && notas_media <= 3) {
+    mensagem = `Caramba, deu ruim, você obteve media ${notas_media}! Estude mais e tente novamente!`
+  }
+  if (notas_media >= 3.1 && notas_media <= 5.9) {
+    mensagem = `Você obteve media ${notas_media}! Falta pouco para a média.`
+  }
+  if (notas_media >= 6 && notas_media <= 7) {
+    mensagem = `Você está na média com ${notas_media}.`
+  }
+  if (notas_media >= 7.1 && notas_media <= 9.9) {
+    mensagem = `Notão! Sua média é ${notas_media}.`
+  }
+  if (notas_media === 10) {
+    mensagem = `Hoje é seu aniversário? Pq você ta de parabéns! 10 de média.`
+  }
   
-  
-  
-  
-  
-  
+  notas.map((nota) => {
+    if (nota < 0 || nota > 10) {
+     return mensagem = "A nota precisa estar entre 0 e 10!"
+    } 
+  })
   // evite mexer na linha de código abaixo!
   document.getElementById("situacaoAluno").innerHTML = mensagem;
 }
